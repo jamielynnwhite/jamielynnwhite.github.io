@@ -229,6 +229,22 @@ body {
 .rdoc-edu-note { font-size: 11.5px; color: #555; font-style: italic; margin-top: 2px; }
 .rdoc-edu-year { font-size: 12px; color: var(--mid); white-space: nowrap; flex-shrink: 0; }
 
+/* Sub-role (multiple roles within one company) */
+.rdoc-subrole {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 16px;
+  margin-top: 14px;
+  margin-bottom: 5px;
+}
+.rdoc-subrole-dates {
+  font-size: 11.5px;
+  color: var(--mid);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
 /* EXPERTISE */
 .rdoc-expertise {
   font-size: 12.5px;
@@ -369,13 +385,24 @@ body {
           <span class="rdoc-company">Slalom</span>
           <span class="rdoc-dates">June 2017 – March 2024 · 7 years</span>
         </div>
-        <div class="rdoc-title">Senior Chief of Staff, Global Marketing <span class="rdoc-promoted">↑ Promoted from Consultant → Director, Org Effectiveness & Experience Design</span></div>
-        <div class="rdoc-context">Fiercely human business and technology consulting firm. Supported company growth from 4,000 to 10,000+ employees across 52 global offices over 7 years. Consistently ranked among the world's best workplaces.</div>
+        <div class="rdoc-context">Fiercely human business and technology consulting firm. Supported company growth from 4,000 to 10,000+ employees across 52 global offices. Promoted 3× across 5 levels over 7 years.</div>
+
+        <div class="rdoc-subrole">
+          <div class="rdoc-title" style="margin:0;">Senior Chief of Staff, Global Marketing</div>
+          <div class="rdoc-subrole-dates">June 2022 – March 2024</div>
+        </div>
         <ul class="rdoc-bullets">
           <li>Designed GTM model centered around industries, services, and solutions, creating consistency and efficiency across distributed global sales teams. Streamlined activities by 60%, accelerated creative development by 50%.</li>
           <li>Built leveling, role clarity, and career progression frameworks for the global marketing function including the me@slalom framework with paths and tracks for consistency and mobility across 52 offices.</li>
           <li>Developed future-state marketing organization design for immediate efficiencies and a scalable 2030 model.</li>
           <li>Redesigned intake, prioritization, and business case process; turnaround dropped from 7+ days to under 2. Recovered 48 senior leader hours per month.</li>
+        </ul>
+
+        <div class="rdoc-subrole" style="margin-top:16px;">
+          <div class="rdoc-title" style="margin:0;">Director, Organizational Effectiveness & Experience Design <span class="rdoc-promoted">↑ from Consultant</span></div>
+          <div class="rdoc-subrole-dates">June 2017 – June 2022</div>
+        </div>
+        <ul class="rdoc-bullets">
           <li>Client-facing consulting across healthcare, retail, financial services, and technology in organizational effectiveness, experience design, and complex program leadership.</li>
         </ul>
         <div class="rdoc-subprogram">
