@@ -29,6 +29,38 @@ body {
 
 .container { max-width: 1060px; margin: 0 auto; padding: 0 40px; }
 
+/* ── NAV ── */
+.site-nav {
+  position: sticky;
+  top: 0;
+  z-index: 200;
+  background: rgba(255,255,255,0.97);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+}
+.nav-inner { display: flex; align-items: center; height: 44px; }
+.nav-link {
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--mid);
+  text-decoration: none;
+  padding: 0 18px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-family: inherit;
+  letter-spacing: 0.1px;
+  transition: color 0.15s;
+  border-bottom: 2px solid transparent;
+  margin-bottom: -1px;
+}
+.nav-link:hover { color: var(--dark); }
+.nav-link.active { color: var(--blue); border-bottom-color: var(--blue); }
+
 /* ── HEADER ── */
 .site-header { padding: 64px 0 52px; border-bottom: 1px solid var(--border); }
 .header-greeting {
@@ -97,25 +129,21 @@ body {
 .maside {
   padding-top: 3px;
   position: sticky;
-  top: 68px;
+  top: 64px;
 }
 
 /* Annotation cards */
 .ann-card {
-  background: var(--light);
-  border: 1px solid var(--border);
-  border-left: 3px solid var(--blue);
-  border-radius: 8px;
-  padding: 14px 16px;
-  margin-bottom: 12px;
+  border-left: 2px solid #D1D5DB;
+  padding: 8px 12px;
+  margin-bottom: 10px;
   cursor: pointer;
-  transition: all 0.15s;
+  transition: border-left-color 0.15s, background 0.15s, padding-left 0.15s;
 }
 .ann-card:hover {
-  background: var(--blue-light);
-  border-color: var(--blue-mid);
   border-left-color: var(--blue);
-  transform: translateX(-2px);
+  background: var(--blue-light);
+  padding-left: 15px;
 }
 .ann-type {
   font-size: 9px;
@@ -123,30 +151,38 @@ body {
   letter-spacing: 1.5px;
   text-transform: uppercase;
   color: var(--blue);
-  margin-bottom: 4px;
+  margin-bottom: 3px;
 }
-.ann-title { font-size: 12.5px; font-weight: 700; color: var(--dark); margin-bottom: 2px; }
-.ann-meta { font-size: 11px; color: var(--mid); margin-bottom: 5px; }
-.ann-stat { font-size: 11.5px; color: var(--dark); font-weight: 600; }
+.ann-title { font-size: 12px; font-weight: 700; color: var(--dark); margin-bottom: 1px; }
+.ann-meta { font-size: 10.5px; color: var(--mid); margin-bottom: 4px; }
+.ann-stat { font-size: 11px; color: #444; }
 .ann-cta {
   display: inline-block;
-  font-size: 10.5px;
+  font-size: 10px;
   color: var(--blue);
   font-weight: 600;
-  margin-top: 7px;
+  margin-top: 5px;
 }
 
 .ann-card.dark-card {
+  border-left-color: #4B5563;
   background: var(--dark);
-  border-color: #333;
-  border-left-color: var(--blue);
+  padding: 10px 12px;
 }
-.ann-card.dark-card:hover { background: #1a1a2e; border-color: #444; border-left-color: var(--blue); }
+.ann-card.dark-card:hover { background: #1a1a2e; border-left-color: #60A5FA; padding-left: 15px; }
 .ann-card.dark-card .ann-type { color: #60A5FA; }
 .ann-card.dark-card .ann-title { color: white; }
 .ann-card.dark-card .ann-meta { color: rgba(255,255,255,0.45); }
-.ann-card.dark-card .ann-stat { color: rgba(255,255,255,0.7); }
+.ann-card.dark-card .ann-stat { color: rgba(255,255,255,0.65); }
 .ann-card.dark-card .ann-cta { color: #93C5FD; }
+
+/* Inline text references in manifesto */
+.text-ref {
+  text-decoration-line: underline;
+  text-decoration-style: dotted;
+  text-decoration-color: rgba(29, 78, 216, 0.45);
+  text-underline-offset: 4px;
+}
 
 /* ── SUMMARY ── */
 .summary-section { padding: 52px 0 40px; border-bottom: 1px solid var(--border); }
@@ -160,7 +196,7 @@ body {
 /* ── FILTER BAR ── */
 .filter-bar {
   position: sticky;
-  top: 0;
+  top: 44px;
   background: rgba(255,255,255,0.95);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
@@ -412,10 +448,22 @@ body {
   .filter-inner { gap: 10px; }
   .hcard-stats { gap: 16px; }
   .view-toggle { order: -1; }
+  .nav-link { padding: 0 12px; font-size: 12px; }
 }
 </style>
 </head>
 <body>
+
+<!-- ═══ NAV ═══ -->
+<nav class="site-nav">
+  <div class="container">
+    <div class="nav-inner">
+      <a href="#why-anthropic" class="nav-link">Why Anthropic</a>
+      <a href="#resume" class="nav-link">Resume</a>
+      <button class="nav-link" id="nav-highlights">0→1 Highlights</button>
+    </div>
+  </div>
+</nav>
 
 <!-- ═══ HEADER ═══ -->
 <header class="site-header">
@@ -436,25 +484,25 @@ body {
 </header>
 
 <!-- ═══ MANIFESTO ═══ -->
-<section class="manifesto-section">
+<section class="manifesto-section" id="why-anthropic">
   <div class="container">
     <div class="manifesto-eyebrow">Why Anthropic — in my own words</div>
     <div class="manifesto-grid">
 
       <div class="manifesto-body">
-        <p class="mpara">We don't get to opt out of the AI transition. The question isn't whether artificial intelligence will reshape how doctors practice medicine, how teachers reach students, how public defenders build cases, or how governments make decisions. It's who gets to shape how that happens — and whether the people doing the shaping understand the humans on the receiving end.</p>
+        <p class="mpara">We don't get to opt out of the AI transition. The question isn't whether artificial intelligence will reshape how doctors practice medicine, how teachers reach students, how public defenders build cases, or how governments make decisions. It's who gets to shape how that happens, and whether the people doing the shaping understand the humans on the receiving end.</p>
 
-        <p class="mpara">That's why working at Anthropic matters to me. Not as a career move. As a conviction.</p>
+        <p class="mpara">That's why Anthropic matters to me. I've thought carefully about where to bring this work, and the answer keeps coming back to the same place.</p>
 
-        <p class="mpara">I've spent 15 years at the intersection of organizational effectiveness and human-centered design — across higher education, management consulting, healthcare, pharma, retail, financial services, and scaling tech. That breadth isn't incidental. It's the reason I think about people programs differently than most. When you've helped stand up a program that administered 25 million COVID tests across 8,000 retail pharmacy locations, worked inside the university systems that train tomorrow's professionals, and built the GTM infrastructure for platforms used by 100 million people, you develop a visceral sense of how differently people in different contexts experience the same technology. That perspective doesn't leave you. It becomes the lens through which you design everything.</p>
+        <p class="mpara">I've spent 15 years at the intersection of organizational effectiveness and human-centered design, across higher education, management consulting, healthcare, pharma, retail, financial services, and scaling tech. That breadth is intentional. It's the reason I think about people programs differently than most. When you've helped stand up <span class="text-ref">a program that administered 25 million COVID tests across 8,000 retail pharmacy locations</span>, worked inside the university systems that train tomorrow's professionals, and <span class="text-ref">built the GTM infrastructure for platforms used by 100 million people</span>, you develop a visceral sense of how differently people in different contexts experience the same technology. That perspective stays with you. It becomes the lens through which you design everything.</p>
 
-        <p class="mpara">My conviction about Anthropic's people programs is this: they need to be as deeply rooted in empathy for end users as Claude itself is. The care that went into Claude's constitution — the explicit codification of values, priorities, and how the model should reason through difficult situations — is exactly the kind of intentionality that people programs need to match. The employees building and shaping these models need organizational systems that help them internalize the stakes for the doctor, the student, the patient, the small business owner. Not just the technical benchmarks. That's not soft work. It's the hardest work, and it's the work that determines whether the mission actually lands in the world.</p>
+        <p class="mpara">My conviction about Anthropic's people programs is this: they need to be as deeply rooted in empathy for end users as Claude itself is. The care that went into the Claude constitution (the explicit codification of values, priorities, and how the model should reason through difficult situations) is exactly the kind of intentionality that people programs need to match. The employees building and shaping these models need organizational systems that help them internalize the stakes for the doctor, the student, the patient, the small business owner. The technical benchmarks matter enormously, and so does this harder-to-measure work: the organizational infrastructure that determines whether the mission actually lands.</p>
 
-        <p class="mpara">I know how to build those systems. I've designed programs from first principles in genuinely ambiguous domains: a global meaningful work initiative built from HCD research when no framework existed, a human-centered DEI engagement that resulted in permanent structural change, an AI-native campaign workflow that compressed months of organizational friction into days. In every case, the methodology was the same — start with what humans actually experience, design toward what they actually need, and build infrastructure that outlasts the initiative.</p>
+        <p class="mpara">I know how to build those systems. I've designed programs from first principles in genuinely ambiguous domains: <span class="text-ref">a global meaningful work initiative built from HCD research when no framework existed</span>, <span class="text-ref">a human-centered DEI engagement that resulted in permanent structural change</span>, <span class="text-ref">an AI-native campaign workflow that compressed months of organizational friction into days</span>. In every case, the methodology was the same: start with what humans actually experience, design toward what they actually need, and build infrastructure that outlasts the initiative.</p>
 
-        <p class="mpara">My coaching certification and my master's research in empathy, mindset, and creative idea generation aren't credentials I keep on a shelf. They're how I think about every program I build — because the hardest part of any people program isn't the design. It's the adoption. And adoption requires understanding how people actually change, not just how organizations say they want them to.</p>
+        <p class="mpara"><span class="text-ref">My coaching certification and my master's research in empathy, mindset, and creative idea generation</span> aren't credentials I keep on a shelf. They're how I think about every program I build, because the hardest part of any people program is adoption. And adoption requires understanding how people actually change, not just how organizations say they want them to.</p>
 
-        <p class="mpara">I want to support the people who are designing how AI shapes our world. I believe Anthropic is doing that work with more rigor and more moral seriousness than anyone. And I believe the people programs that support that mission need to be built with the same care. I'd love to be the person who builds them.</p>
+        <p class="mpara">I want to support the people who are designing how AI shapes our world. I believe Anthropic is doing that work with more rigor and more moral seriousness than anyone. The people programs that support that mission need to be built with the same care. I'd love to be the person who builds them.</p>
       </div>
 
       <div class="maside">
@@ -523,7 +571,7 @@ body {
 </section>
 
 <!-- ═══ FILTER BAR ═══ -->
-<div class="filter-bar">
+<div class="filter-bar" id="resume">
   <div class="container">
     <div class="filter-inner">
       <span class="filter-label">Expertise</span>
@@ -900,6 +948,32 @@ function goTo(targetId, view) {
     setTimeout(() => el.classList.remove('flash-target'), 2400);
   }, switchingView ? 180 : 0);
 }
+
+// Nav: 0→1 Highlights button
+document.getElementById('nav-highlights').addEventListener('click', () => {
+  setView('highlights');
+  setTimeout(() => {
+    document.getElementById('resume').scrollIntoView({ behavior: 'smooth' });
+  }, 50);
+});
+
+// Nav active state on scroll
+const navSections = [
+  { id: 'why-anthropic', link: document.querySelector('.nav-link[href="#why-anthropic"]') },
+  { id: 'resume',        link: document.querySelector('.nav-link[href="#resume"]') },
+];
+function updateNavActive() {
+  const scrollY = window.scrollY + 60;
+  let active = null;
+  navSections.forEach(s => {
+    const el = document.getElementById(s.id);
+    if (el && el.offsetTop <= scrollY) active = s;
+  });
+  navSections.forEach(s => s.link && s.link.classList.remove('active'));
+  if (active) active.link && active.link.classList.add('active');
+}
+window.addEventListener('scroll', updateNavActive, { passive: true });
+updateNavActive();
 
 // Annotation cards
 document.querySelectorAll('.ann-card[data-target]').forEach(card => {
