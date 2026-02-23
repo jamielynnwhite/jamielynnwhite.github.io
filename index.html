@@ -178,10 +178,28 @@ body {
 
 /* Inline text references in manifesto */
 .text-ref {
+  border-radius: 2px;
+  padding: 0 1px;
+  transition: background 0.2s;
+  cursor: default;
+}
+.text-ref:hover, .text-ref.lit {
+  background: rgba(29, 78, 216, 0.08);
   text-decoration-line: underline;
-  text-decoration-style: dotted;
-  text-decoration-color: rgba(29, 78, 216, 0.45);
-  text-underline-offset: 4px;
+  text-decoration-color: var(--blue);
+  text-underline-offset: 3px;
+}
+
+/* Subtle program cards — lit on hover pairing */
+.ann-card.prog-card {
+  opacity: 0.28;
+  transition: opacity 0.22s, border-left-color 0.22s, background 0.22s, padding-left 0.15s;
+}
+.ann-card.prog-card:hover, .ann-card.prog-card.lit {
+  opacity: 1;
+  border-left-color: var(--blue);
+  background: var(--blue-light);
+  padding-left: 15px;
 }
 
 /* ── SUMMARY ── */
@@ -417,26 +435,26 @@ body {
       <div class="manifesto-body">
         <p class="mpara">AI will reshape everything. How doctors practice medicine, how teachers reach students, how public defenders build cases, how governments make decisions. The people who are shaping the AI - the people building Anthropic - have the biggest responsibility and opportunity of our lifetime. Supporting those people to do their most conscientious work is a moral and societal imperative. Being a part of the Anthropic People PMO would be my <em>Ikigai</em>.</p>
 
-        <p class="mpara">I've spent 15 years at the intersection of organizational effectiveness and human-centered design, across higher education, management consulting, healthcare, pharma, retail, financial services, and scaling tech. That breadth is intentional. It's the reason I think about people programs differently than most. When you've helped stand up <span class="text-ref">a program that administered 25 million COVID tests across 8,000 retail pharmacy locations</span>, worked inside the university systems that train tomorrow's professionals, and <span class="text-ref">built the GTM infrastructure for platforms used by 100 million people</span>, you develop a visceral sense of how differently people in different contexts experience the same technology. That perspective stays with you. It becomes the lens through which you design everything.</p>
+        <p class="mpara">I've spent 15 years at the intersection of organizational effectiveness and human-centered design, across higher education, management consulting, healthcare, pharma, retail, financial services, and scaling tech. That breadth is intentional. It's the reason I think about people programs differently than most. When you've helped stand up <span class="text-ref" data-pair="covid">a program that administered 25 million COVID tests across 8,000 retail pharmacy locations</span>, worked inside the university systems that train tomorrow's professionals, and <span class="text-ref" data-pair="notion-role">built the GTM infrastructure for platforms used by 100 million people</span>, you develop a visceral sense of how differently people in different contexts experience the same technology. That perspective stays with you. It becomes the lens through which you design everything.</p>
 
         <p class="mpara">My conviction about Anthropic's people programs is this: they need to be as deeply rooted in empathy for end users as Claude itself is. The care that went into the Claude constitution (the explicit codification of values, priorities, and how the model should reason through difficult situations) is exactly the kind of intentionality that people programs need to match. The employees building and shaping these models need organizational systems that help them internalize the stakes for the doctor, the student, the patient, the small business owner. The technical benchmarks matter enormously, and so does this harder-to-measure work: the organizational infrastructure that determines whether the mission actually lands.</p>
 
-        <p class="mpara">I know how to build those systems. I've designed programs from first principles in genuinely ambiguous domains: <span class="text-ref">a global meaningful work initiative built from HCD research when no framework existed</span>, <span class="text-ref">a human-centered DEI engagement that resulted in permanent structural change</span>, <span class="text-ref">an AI-native campaign workflow that compressed months of organizational friction into days</span>. In every case, the methodology was the same: start with what humans actually experience, design toward what they actually need, and build infrastructure that outlasts the initiative.</p>
+        <p class="mpara">I know how to build those systems. I've designed programs from first principles in genuinely ambiguous domains: <span class="text-ref" data-pair="meaningful-work">a global meaningful work initiative built from HCD research when no framework existed</span>, <span class="text-ref" data-pair="hcd-dei">a human-centered DEI engagement that resulted in permanent structural change</span>, <span class="text-ref" data-pair="agent-gtm">an AI-native campaign workflow that compressed months of organizational friction into days</span>. In every case, the methodology was the same: start with what humans actually experience, design toward what they actually need, and build infrastructure that outlasts the initiative.</p>
 
-        <p class="mpara"><span class="text-ref">My coaching certification and my master's research in empathy, mindset, and creative idea generation</span> aren't credentials I keep on a shelf. They're how I think about every program I build, because the hardest part of any people program is adoption. And adoption requires understanding how people actually change, not just how organizations say they want them to.</p>
+        <p class="mpara"><span class="text-ref" data-pair="education">My coaching certification and my master's research in empathy, mindset, and creative idea generation</span> aren't credentials I keep on a shelf. They're how I think about every program I build, because the hardest part of any people program is adoption. And adoption requires understanding how people actually change, not just how organizations say they want them to.</p>
 
         <p class="mpara">I want to support the people who are designing how AI shapes our world. I believe Anthropic is doing that work with more rigor and more moral seriousness than anyone. The people programs that support that mission need to be built with the same care. I'd love to be the person who builds them.</p>
       </div>
 
       <div class="maside">
-        <div class="ann-card" data-target="highlight-covid">
+        <div class="ann-card prog-card" data-target="highlight-covid" data-pair="covid">
           <div class="ann-type">Program Highlight</div>
           <div class="ann-title">COVID Testing Program</div>
           <div class="ann-meta">Slalom · 2020–2022</div>
           <div class="ann-stat">25M+ tests · 8,000 stores · 30-person team</div>
           <span class="ann-cta">View full program →</span>
         </div>
-        <div class="ann-card" onclick="window.location.href='resume.html'" style="cursor:pointer;">
+        <div class="ann-card prog-card" data-pair="notion-role" onclick="window.location.href='resume.html'" style="cursor:pointer;">
           <div class="ann-type">Current Role</div>
           <div class="ann-title">Chief of Staff, Global Marketing</div>
           <div class="ann-meta">Notion · 2025–Present</div>
@@ -444,34 +462,34 @@ body {
           <span class="ann-cta">View resume →</span>
         </div>
         <div class="ann-card dark-card" data-target-url="https://jamielynnwhite.github.io/anthropic-pmo/">
-          <div class="ann-type">I already built this</div>
+          <div class="ann-type">Proof of Concept</div>
           <div class="ann-title">People PMO Portfolio</div>
           <div class="ann-meta">6 initiatives · 3 scale phases · Full prototype</div>
           <div class="ann-stat">Level framework · L&D · Hiring · Comp · Reviews</div>
           <a class="ann-cta" href="https://jamielynnwhite.github.io/anthropic-pmo/" target="_blank" onclick="event.stopPropagation()">Explore the portfolio →</a>
         </div>
-        <div class="ann-card" data-target="highlight-meaningful-work">
+        <div class="ann-card prog-card" data-target="highlight-meaningful-work" data-pair="meaningful-work">
           <div class="ann-type">0→1 Program</div>
           <div class="ann-title">Meaningful Work Initiative</div>
           <div class="ann-meta">Slalom · Global rollout · 2019</div>
           <div class="ann-stat">HCD research → structural change</div>
           <span class="ann-cta">View full program →</span>
         </div>
-        <div class="ann-card" data-target="highlight-hcd-dei">
+        <div class="ann-card prog-card" data-target="highlight-hcd-dei" data-pair="hcd-dei">
           <div class="ann-type">0→1 Program</div>
           <div class="ann-title">HCD for DEI</div>
           <div class="ann-meta">Slalom · 2018</div>
           <div class="ann-stat">First IDE role in firm history</div>
           <span class="ann-cta">View full program →</span>
         </div>
-        <div class="ann-card" data-target="highlight-agent-gtm">
+        <div class="ann-card prog-card" data-target="highlight-agent-gtm" data-pair="agent-gtm">
           <div class="ann-type">0→1 Program</div>
           <div class="ann-title">Agent-First GTM Workflow</div>
           <div class="ann-meta">Notion · 2025</div>
           <div class="ann-stat">Months → days · 100+ marketers</div>
           <span class="ann-cta">View full program →</span>
         </div>
-        <div class="ann-card" onclick="window.location.href='resume.html'" style="cursor:pointer;">
+        <div class="ann-card prog-card" data-pair="education" onclick="window.location.href='resume.html'" style="cursor:pointer;">
           <div class="ann-type">Education</div>
           <div class="ann-title">MS, Learning & Org Change</div>
           <div class="ann-meta">Northwestern University · 2017</div>
@@ -700,6 +718,18 @@ function goTo(targetId) {
 
 document.querySelectorAll('.ann-card[data-target]').forEach(card => {
   card.addEventListener('click', () => goTo(card.dataset.target));
+});
+
+// Hover pairing: text-ref ↔ sidebar card
+document.querySelectorAll('.text-ref[data-pair]').forEach(ref => {
+  const card = document.querySelector(`.ann-card[data-pair="${ref.dataset.pair}"]`);
+  if (!card) return;
+  const on  = () => { ref.classList.add('lit');    card.classList.add('lit'); };
+  const off = () => { ref.classList.remove('lit'); card.classList.remove('lit'); };
+  ref.addEventListener('mouseenter', on);
+  ref.addEventListener('mouseleave', off);
+  card.addEventListener('mouseenter', on);
+  card.addEventListener('mouseleave', off);
 });
 
 const navSections = [
