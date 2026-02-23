@@ -1,0 +1,916 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Jamie Lynn White — People PMO, Anthropic</title>
+<style>
+:root {
+  --blue: #1D4ED8;
+  --blue-light: #EFF6FF;
+  --blue-mid: #BFDBFE;
+  --dark: #0F0F0F;
+  --mid: #6B7280;
+  --light: #F9FAFB;
+  --white: #FFFFFF;
+  --border: #E5E7EB;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+  background: var(--white);
+  color: var(--dark);
+  font-size: 15px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+.container { max-width: 1060px; margin: 0 auto; padding: 0 40px; }
+
+/* ── HEADER ── */
+.site-header { padding: 64px 0 52px; border-bottom: 1px solid var(--border); }
+.header-greeting {
+  font-size: 52px;
+  font-weight: 800;
+  letter-spacing: -2px;
+  line-height: 1.05;
+  color: var(--dark);
+  margin-bottom: 14px;
+}
+.header-pitch {
+  font-size: 18px;
+  color: var(--mid);
+  line-height: 1.55;
+  max-width: 600px;
+  margin-bottom: 24px;
+}
+.header-pitch strong { color: var(--blue); font-weight: 600; }
+.header-meta { display: flex; gap: 20px; flex-wrap: wrap; align-items: center; }
+.header-meta a {
+  font-size: 13px;
+  color: var(--mid);
+  text-decoration: none;
+  transition: color 0.15s;
+}
+.header-meta a:hover { color: var(--dark); }
+.pmo-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  background: var(--dark);
+  color: white !important;
+  padding: 9px 18px;
+  border-radius: 8px;
+  font-size: 12.5px !important;
+  font-weight: 700;
+  transition: background 0.15s;
+}
+.pmo-btn:hover { background: #1a1a2e !important; }
+.pmo-btn .arrow { font-size: 14px; }
+
+/* ── MANIFESTO ── */
+.manifesto-section { padding: 64px 0 60px; border-bottom: 1px solid var(--border); }
+.manifesto-eyebrow {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: var(--blue);
+  margin-bottom: 36px;
+}
+.manifesto-grid {
+  display: grid;
+  grid-template-columns: 1fr 272px;
+  gap: 0 56px;
+  align-items: start;
+}
+.mpara {
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 17px;
+  line-height: 1.9;
+  color: #111;
+  margin-bottom: 32px;
+}
+.maside { padding-top: 3px; }
+
+/* Annotation cards */
+.ann-card {
+  background: var(--light);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--blue);
+  border-radius: 8px;
+  padding: 14px 16px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+.ann-card:hover {
+  background: var(--blue-light);
+  border-color: var(--blue-mid);
+  border-left-color: var(--blue);
+  transform: translateX(-2px);
+}
+.ann-type {
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--blue);
+  margin-bottom: 4px;
+}
+.ann-title { font-size: 12.5px; font-weight: 700; color: var(--dark); margin-bottom: 2px; }
+.ann-meta { font-size: 11px; color: var(--mid); margin-bottom: 5px; }
+.ann-stat { font-size: 11.5px; color: var(--dark); font-weight: 600; }
+.ann-cta {
+  display: inline-block;
+  font-size: 10.5px;
+  color: var(--blue);
+  font-weight: 600;
+  margin-top: 7px;
+}
+
+.ann-card.dark-card {
+  background: var(--dark);
+  border-color: #333;
+  border-left-color: var(--blue);
+}
+.ann-card.dark-card:hover { background: #1a1a2e; border-color: #444; border-left-color: var(--blue); }
+.ann-card.dark-card .ann-type { color: #60A5FA; }
+.ann-card.dark-card .ann-title { color: white; }
+.ann-card.dark-card .ann-meta { color: rgba(255,255,255,0.45); }
+.ann-card.dark-card .ann-stat { color: rgba(255,255,255,0.7); }
+.ann-card.dark-card .ann-cta { color: #93C5FD; }
+
+/* ── SUMMARY ── */
+.summary-section { padding: 52px 0 40px; border-bottom: 1px solid var(--border); }
+.summary-text {
+  font-size: 15.5px;
+  line-height: 1.8;
+  color: #1a1a1a;
+  max-width: 820px;
+}
+
+/* ── FILTER BAR ── */
+.filter-bar {
+  position: sticky;
+  top: 0;
+  background: rgba(255,255,255,0.95);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--border);
+  padding: 12px 0;
+  z-index: 100;
+}
+.filter-inner {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+.filter-label {
+  font-size: 9.5px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--mid);
+  flex-shrink: 0;
+  white-space: nowrap;
+}
+.tags-row { display: flex; gap: 5px; flex-wrap: wrap; flex: 1; }
+.tag {
+  padding: 4px 11px;
+  border-radius: 20px;
+  font-size: 11.5px;
+  font-weight: 600;
+  cursor: pointer;
+  background: var(--light);
+  color: var(--mid);
+  border: 1px solid var(--border);
+  transition: all 0.14s;
+  user-select: none;
+  white-space: nowrap;
+}
+.tag:hover { border-color: var(--blue); color: var(--blue); background: var(--blue-light); }
+.tag.active { background: var(--blue); color: white; border-color: var(--blue); }
+.tag-clear {
+  font-size: 11px;
+  color: var(--mid);
+  cursor: pointer;
+  text-decoration: underline;
+  display: none;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.tag-clear.visible { display: inline; }
+.view-toggle {
+  display: flex;
+  gap: 2px;
+  background: var(--light);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 3px;
+  flex-shrink: 0;
+}
+.view-btn {
+  padding: 5px 14px;
+  border: none;
+  border-radius: 6px;
+  font-size: 11.5px;
+  font-weight: 700;
+  cursor: pointer;
+  background: transparent;
+  color: var(--mid);
+  font-family: inherit;
+  transition: all 0.14s;
+  white-space: nowrap;
+}
+.view-btn:hover { color: var(--dark); }
+.view-btn.active { background: var(--dark); color: white; }
+
+/* ── RESUME CONTENT ── */
+.resume-section { padding: 44px 0 72px; }
+.view-pane { display: none; }
+.view-pane.active { display: block; }
+
+.section-rule {
+  font-size: 9.5px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--mid);
+  padding-bottom: 10px;
+  border-bottom: 1.5px solid var(--border);
+  margin-bottom: 28px;
+}
+
+/* Experience items */
+.exp-item {
+  padding: 22px 22px 22px 22px;
+  border-radius: 10px;
+  border: 1.5px solid transparent;
+  margin-bottom: 8px;
+  transition: all 0.2s;
+}
+.exp-item.dimmed { opacity: 0.15; pointer-events: none; }
+.exp-item.highlighted { background: var(--blue-light); border-color: var(--blue-mid); }
+
+@keyframes flashPulse {
+  0%   { background: transparent; border-color: transparent; }
+  20%  { background: #EFF6FF; border-color: var(--blue); box-shadow: 0 0 0 3px rgba(29,78,216,0.1); }
+  80%  { background: #EFF6FF; border-color: var(--blue); }
+  100% { background: transparent; border-color: transparent; }
+}
+.flash-target { animation: flashPulse 2.2s ease; }
+
+.exp-company { font-size: 17px; font-weight: 800; letter-spacing: -0.3px; }
+.exp-role { font-size: 13.5px; color: var(--mid); margin-top: 2px; }
+.exp-promoted {
+  display: inline-block;
+  font-size: 10px;
+  font-weight: 700;
+  color: var(--blue);
+  background: var(--blue-light);
+  padding: 1px 7px;
+  border-radius: 10px;
+  margin-left: 8px;
+  vertical-align: middle;
+}
+.exp-date { font-size: 12px; color: var(--mid); margin-top: 3px; }
+.exp-context {
+  font-size: 12.5px;
+  color: var(--mid);
+  font-style: italic;
+  line-height: 1.6;
+  margin: 10px 0 12px;
+  max-width: 720px;
+}
+.exp-bullets { list-style: none; margin-top: 8px; }
+.exp-bullets li {
+  font-size: 13px;
+  color: #222;
+  line-height: 1.65;
+  padding: 4px 0 4px 18px;
+  position: relative;
+}
+.exp-bullets li::before {
+  content: '—';
+  position: absolute;
+  left: 0;
+  color: #ccc;
+  font-size: 11px;
+  top: 6px;
+}
+
+/* Sub-highlight (program callout inside Classic role) */
+.sub-program {
+  margin-top: 20px;
+  padding: 18px 20px;
+  background: var(--light);
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--blue);
+  transition: all 0.2s;
+}
+.sub-program.dimmed { opacity: 0.15; }
+.sub-program.highlighted { background: var(--blue-light); border-color: var(--blue-mid); border-left-color: var(--blue); }
+.sp-eyebrow {
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--blue);
+  margin-bottom: 4px;
+}
+.sp-title { font-size: 14px; font-weight: 800; margin-bottom: 2px; }
+.sp-meta { font-size: 11px; color: var(--mid); margin-bottom: 9px; }
+.sp-body { font-size: 12.5px; color: #222; line-height: 1.65; }
+.sp-bullets { list-style: none; margin-top: 8px; }
+.sp-bullets li {
+  font-size: 12.5px;
+  color: #222;
+  line-height: 1.6;
+  padding: 3px 0 3px 16px;
+  position: relative;
+}
+.sp-bullets li::before { content: '→'; position: absolute; left: 0; color: var(--blue); font-size: 10px; top: 5px; }
+
+/* ── 0→1 HIGHLIGHT CARDS ── */
+.hcard {
+  border: 1.5px solid var(--border);
+  border-radius: 12px;
+  padding: 26px 28px;
+  margin-bottom: 20px;
+  border-left: 4px solid var(--blue);
+  transition: all 0.2s;
+}
+.hcard.dimmed { opacity: 0.15; pointer-events: none; }
+.hcard.highlighted { background: var(--blue-light); border-color: var(--blue-mid); border-left-color: var(--blue); }
+.hcard-eyebrow {
+  font-size: 9.5px;
+  font-weight: 700;
+  letter-spacing: 1.8px;
+  text-transform: uppercase;
+  color: var(--blue);
+  margin-bottom: 7px;
+}
+.hcard-title { font-size: 20px; font-weight: 800; letter-spacing: -0.4px; margin-bottom: 3px; }
+.hcard-meta { font-size: 12px; color: var(--mid); margin-bottom: 14px; }
+.hcard-stats { display: flex; gap: 28px; flex-wrap: wrap; margin-bottom: 16px; }
+.hcard-stat .num { font-size: 17px; font-weight: 800; color: var(--blue); line-height: 1.1; }
+.hcard-stat .lbl { font-size: 10px; color: var(--mid); margin-top: 2px; }
+.hcard-body { font-size: 13.5px; color: #222; line-height: 1.7; margin-bottom: 10px; }
+.hcard-bullets { list-style: none; }
+.hcard-bullets li {
+  font-size: 13px;
+  color: #222;
+  line-height: 1.65;
+  padding: 4px 0 4px 18px;
+  position: relative;
+}
+.hcard-bullets li::before { content: '→'; position: absolute; left: 0; color: var(--blue); font-size: 11px; top: 5px; }
+
+/* ── EDUCATION ── */
+.edu-block { margin-top: 52px; padding-top: 36px; border-top: 1.5px solid var(--border); }
+.edu-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-top: 20px; }
+.edu-card {
+  padding: 18px 20px;
+  background: var(--light);
+  border-radius: 10px;
+  border: 1px solid var(--border);
+}
+.edu-degree { font-size: 13px; font-weight: 700; margin-bottom: 3px; line-height: 1.4; }
+.edu-school { font-size: 12px; color: var(--mid); }
+.edu-year { font-size: 11px; color: var(--mid); margin-top: 2px; }
+.edu-note { font-size: 11.5px; color: var(--dark); margin-top: 6px; font-style: italic; line-height: 1.4; }
+
+/* ── FOOTER ── */
+.site-footer {
+  background: var(--dark);
+  color: rgba(255,255,255,0.4);
+  padding: 26px 0;
+  font-size: 12.5px;
+}
+.footer-inner { display: flex; align-items: center; justify-content: space-between; }
+.footer-link { color: #93C5FD; text-decoration: none; font-weight: 600; }
+.footer-link:hover { color: white; }
+
+/* ── MOBILE ── */
+@media (max-width: 800px) {
+  .container { padding: 0 20px; }
+  .manifesto-grid { grid-template-columns: 1fr; }
+  .maside { display: none; }
+  .header-greeting { font-size: 34px; letter-spacing: -1px; }
+  .header-pitch { font-size: 16px; }
+  .edu-grid { grid-template-columns: 1fr; }
+  .filter-inner { gap: 10px; }
+  .hcard-stats { gap: 16px; }
+  .view-toggle { order: -1; }
+}
+</style>
+</head>
+<body>
+
+<!-- ═══ HEADER ═══ -->
+<header class="site-header">
+  <div class="container">
+    <div class="header-greeting">Hi, I'm Jamie.</div>
+    <div class="header-pitch">
+      I want to join the <strong>People PMO at Anthropic</strong> — and help build the organizational infrastructure that lets the mission actually land in the world.
+    </div>
+    <div class="header-meta">
+      <a href="mailto:white.jamie.lynn@gmail.com">white.jamie.lynn@gmail.com</a>
+      <a href="tel:6307286329">630-728-6329</a>
+      <a href="https://linkedin.com/in/jamielynnwhite" target="_blank">LinkedIn ↗</a>
+      <a href="https://jamielynnwhite.github.io/anthropic-pmo/" target="_blank" class="pmo-btn">
+        View my People PMO portfolio <span class="arrow">→</span>
+      </a>
+    </div>
+  </div>
+</header>
+
+<!-- ═══ MANIFESTO ═══ -->
+<section class="manifesto-section">
+  <div class="container">
+    <div class="manifesto-eyebrow">Why Anthropic — in my own words</div>
+    <div class="manifesto-grid">
+
+      <!-- P1 -->
+      <p class="mpara">We don't get to opt out of the AI transition. The question isn't whether artificial intelligence will reshape how doctors practice medicine, how teachers reach students, how public defenders build cases, or how governments make decisions. It's who gets to shape how that happens — and whether the people doing the shaping understand the humans on the receiving end.</p>
+      <div class="maside"></div>
+
+      <!-- P2 -->
+      <p class="mpara">That's why working at Anthropic matters to me. Not as a career move. As a conviction.</p>
+      <div class="maside"></div>
+
+      <!-- P3 -->
+      <p class="mpara">I've spent 15 years at the intersection of organizational effectiveness and human-centered design — across higher education, management consulting, healthcare, pharma, retail, financial services, and scaling tech. That breadth isn't incidental. It's the reason I think about people programs differently than most. When you've helped stand up a program that administered 25 million COVID tests across 8,000 retail pharmacy locations, worked inside the university systems that train tomorrow's professionals, and built the GTM infrastructure for platforms used by 100 million people, you develop a visceral sense of how differently people in different contexts experience the same technology. That perspective doesn't leave you. It becomes the lens through which you design everything.</p>
+      <div class="maside">
+        <div class="ann-card" data-target="highlight-covid" data-view="highlights">
+          <div class="ann-type">Program Highlight</div>
+          <div class="ann-title">COVID Testing Program</div>
+          <div class="ann-meta">Slalom · 2020–2022</div>
+          <div class="ann-stat">25M+ tests · 8,000 stores · 30-person team</div>
+          <span class="ann-cta">View full program →</span>
+        </div>
+        <div class="ann-card" data-target="exp-notion" data-view="classic">
+          <div class="ann-type">Current Role</div>
+          <div class="ann-title">Chief of Staff, Global Marketing</div>
+          <div class="ann-meta">Notion · 2025–Present</div>
+          <div class="ann-stat">$65M budget · 100M+ users</div>
+          <span class="ann-cta">View role →</span>
+        </div>
+      </div>
+
+      <!-- P4 -->
+      <p class="mpara">My conviction about Anthropic's people programs is this: they need to be as deeply rooted in empathy for end users as Claude itself is. The care that went into Claude's constitution — the explicit codification of values, priorities, and how the model should reason through difficult situations — is exactly the kind of intentionality that people programs need to match. The employees building and shaping these models need organizational systems that help them internalize the stakes for the doctor, the student, the patient, the small business owner. Not just the technical benchmarks. That's not soft work. It's the hardest work, and it's the work that determines whether the mission actually lands in the world.</p>
+      <div class="maside">
+        <div class="ann-card dark-card" data-target-url="https://jamielynnwhite.github.io/anthropic-pmo/">
+          <div class="ann-type">I already built this</div>
+          <div class="ann-title">People PMO Portfolio</div>
+          <div class="ann-meta">6 initiatives · 3 scale phases · Full prototype</div>
+          <div class="ann-stat">Level framework · L&D · Hiring · Comp · Reviews</div>
+          <a class="ann-cta" href="https://jamielynnwhite.github.io/anthropic-pmo/" target="_blank" onclick="event.stopPropagation()">Explore the portfolio →</a>
+        </div>
+      </div>
+
+      <!-- P5 -->
+      <p class="mpara">I know how to build those systems. I've designed programs from first principles in genuinely ambiguous domains: a global meaningful work initiative built from HCD research when no framework existed, a human-centered DEI engagement that resulted in permanent structural change, an AI-native campaign workflow that compressed months of organizational friction into days. In every case, the methodology was the same — start with what humans actually experience, design toward what they actually need, and build infrastructure that outlasts the initiative.</p>
+      <div class="maside">
+        <div class="ann-card" data-target="highlight-meaningful-work" data-view="highlights">
+          <div class="ann-type">0→1 Program</div>
+          <div class="ann-title">Meaningful Work Initiative</div>
+          <div class="ann-meta">Slalom · Global rollout · 2019</div>
+          <div class="ann-stat">HCD research → structural change</div>
+          <span class="ann-cta">View full program →</span>
+        </div>
+        <div class="ann-card" data-target="highlight-hcd-dei" data-view="highlights">
+          <div class="ann-type">0→1 Program</div>
+          <div class="ann-title">HCD for DEI</div>
+          <div class="ann-meta">Slalom · 2018</div>
+          <div class="ann-stat">First IDE role in firm history</div>
+          <span class="ann-cta">View full program →</span>
+        </div>
+        <div class="ann-card" data-target="highlight-agent-gtm" data-view="highlights">
+          <div class="ann-type">0→1 Program</div>
+          <div class="ann-title">Agent-First GTM Workflow</div>
+          <div class="ann-meta">Notion · 2025</div>
+          <div class="ann-stat">Months → days · 100+ marketers</div>
+          <span class="ann-cta">View full program →</span>
+        </div>
+      </div>
+
+      <!-- P6 -->
+      <p class="mpara">My coaching certification and my master's research in empathy, mindset, and creative idea generation aren't credentials I keep on a shelf. They're how I think about every program I build — because the hardest part of any people program isn't the design. It's the adoption. And adoption requires understanding how people actually change, not just how organizations say they want them to.</p>
+      <div class="maside">
+        <div class="ann-card" data-target="education" data-view="classic">
+          <div class="ann-type">Education</div>
+          <div class="ann-title">MS, Learning & Org Change</div>
+          <div class="ann-meta">Northwestern University · 2017</div>
+          <div class="ann-stat">Research: empathy, mindset, creativity</div>
+          <div class="ann-stat" style="margin-top:3px;">+ Leadership Coaching Certification</div>
+          <span class="ann-cta">View education →</span>
+        </div>
+      </div>
+
+      <!-- P7 -->
+      <p class="mpara">I want to support the people who are designing how AI shapes our world. I believe Anthropic is doing that work with more rigor and more moral seriousness than anyone. And I believe the people programs that support that mission need to be built with the same care. I'd love to be the person who builds them.</p>
+      <div class="maside"></div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══ SUMMARY ═══ -->
+<section class="summary-section">
+  <div class="container">
+    <div class="section-rule">Summary</div>
+    <p class="summary-text">Organizational architect and strategic builder with 15+ years designing foundational people, GTM, and operating systems at companies navigating critical inflection points — from global consulting firm to scaling tech orgs. Thinks like a management consultant, executes like a senior program manager, and understands people and culture deeply enough to build solutions that actually change how people work. Certified leadership coach. Master's from Northwestern in Learning & Organizational Change. Conviction that the AI era requires entirely new frameworks for how organizations develop, align, and support their people.</p>
+  </div>
+</section>
+
+<!-- ═══ FILTER BAR ═══ -->
+<div class="filter-bar">
+  <div class="container">
+    <div class="filter-inner">
+      <span class="filter-label">Expertise</span>
+      <div class="tags-row">
+        <span class="tag" data-tag="zero-to-one">0→1 Program Design</span>
+        <span class="tag" data-tag="people-programs">People Programs</span>
+        <span class="tag" data-tag="career-frameworks">Career Frameworks</span>
+        <span class="tag" data-tag="org-architecture">Org Architecture</span>
+        <span class="tag" data-tag="hcd">Human-Centered Design</span>
+        <span class="tag" data-tag="change-management">Change Management</span>
+        <span class="tag" data-tag="ai-workflows">AI-Native Workflows</span>
+        <span class="tag" data-tag="chief-of-staff">Chief of Staff</span>
+        <span class="tag" data-tag="gtm-operations">GTM Operations</span>
+        <span class="tag" data-tag="coaching">Leadership Coaching</span>
+        <span class="tag" data-tag="strategic-planning">Strategic Planning</span>
+        <span class="tag" data-tag="budget">Budget Management</span>
+        <span class="tag" data-tag="complex-programs">Complex Programs</span>
+        <span class="tag" data-tag="cross-functional">Cross-functional</span>
+      </div>
+      <span class="tag-clear" id="tag-clear">Clear</span>
+      <div class="view-toggle">
+        <button class="view-btn active" data-view="classic">Classic</button>
+        <button class="view-btn" data-view="highlights">0→1 Highlights</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ RESUME CONTENT ═══ -->
+<section class="resume-section">
+  <div class="container">
+
+    <!-- ── CLASSIC VIEW ── -->
+    <div class="view-pane active" id="view-classic">
+      <div class="section-rule">Experience</div>
+
+      <!-- NOTION -->
+      <div class="exp-item" id="exp-notion"
+        data-tags="chief-of-staff gtm-operations ai-workflows budget career-frameworks people-programs cross-functional strategic-planning coaching">
+        <div class="exp-company">Notion</div>
+        <div class="exp-role">Chief of Staff, Global Marketing</div>
+        <div class="exp-date">August 2025 – Present</div>
+        <div class="exp-context">Strategic operator and thought partner to the CMO at Notion — an AI-powered productivity platform valued at $11B, used by 100M+ people worldwide. Responsible for the operating systems, planning infrastructure, and people programs that enable a global marketing org to execute with clarity and speed.</div>
+        <ul class="exp-bullets">
+          <li>Redesigned the integrated GTM campaign and sales play framework, replacing months of manual cross-functional coordination with an automated, agent-first workflow built natively in Notion AI. Campaign delivery compressed from months to days/weeks across 100+ marketers.</li>
+          <li>Owned the annual planning process; led a structural shift from bottom-up budget submission to top-down strategic allocation mapped to business outcomes across brand, growth, demand, and global regions. Total budget managed: $65M.</li>
+          <li>Designed and launched the global marketing career framework — employee workshops, leadership sessions, competitive benchmarking, AI-accelerated. Updated levels, defined new capabilities, and introduced job function definitions to create global standards across matrixed teams.</li>
+          <li>Active leadership coach to marketing leaders navigating org change, role evolution, and team complexity.</li>
+        </ul>
+      </div>
+
+      <!-- GRAMMARLY -->
+      <div class="exp-item" id="exp-grammarly"
+        data-tags="chief-of-staff gtm-operations zero-to-one org-architecture career-frameworks change-management cross-functional strategic-planning complex-programs people-programs">
+        <div class="exp-company">Grammarly</div>
+        <div class="exp-role">
+          Senior Director, GTM Strategy & Operations
+          <span class="exp-promoted">↑ Promoted from Director</span>
+        </div>
+        <div class="exp-date">April 2024 – July 2025</div>
+        <div class="exp-context">Founded and led Grammarly's first centralized GTM Strategy & Operations function during a high-stakes strategic pivot from single-product B2C to multi-product B2C2B. Strategic advisor and organizational chief of staff to the CMO. Built the function, team, and infrastructure from nothing.</div>
+        <ul class="exp-bullets">
+          <li>Built GTM S&O from 0: wrote the charter, hired and developed a team of 8, established operating infrastructure across 100+ programs, projects, and events.</li>
+          <li>Launched 3 net-new programs in year one: Expansion Marketing (new charter, team, workflows), Voice of Customer insights cadence, and a unified Managed GTM Leadership Team spanning Sales, Marketing, and Product.</li>
+          <li>Designed leveling and career path frameworks for the marketing org; created standardization for performance management, career advancement, and hiring across a pivoting org.</li>
+          <li>Led Grammarly's first integrated B2B GTM campaign — generated $1.56M ACV across 141 sourced opportunities with a 73% win rate.</li>
+          <li>Designed and ran the FY26 strategic planning cycle — reduced planning time by 30%, improved executive visibility into tradeoffs and resource needs.</li>
+          <li>Served as culture champion and change management lead through organizational restructuring. Rebuilt operating rhythms, coached senior marketers, maintained team stability through significant uncertainty.</li>
+        </ul>
+      </div>
+
+      <!-- SLALOM -->
+      <div class="exp-item" id="exp-slalom"
+        data-tags="chief-of-staff gtm-operations org-architecture career-frameworks strategic-planning people-programs change-management complex-programs hcd cross-functional">
+        <div class="exp-company">Slalom</div>
+        <div class="exp-role">Senior Chief of Staff, Global Marketing → Consultant to Director, Org Effectiveness & Experience Design</div>
+        <div class="exp-date">June 2017 – March 2024 · 7 years</div>
+        <div class="exp-context">Fiercely human business and technology consulting firm. Supported company growth from 4,000 to 10,000+ employees over 7 years across 52 global offices. Consistently ranked among the world's best workplaces.</div>
+        <ul class="exp-bullets">
+          <li>Designed GTM model centered around industries, services, and solutions — creating consistency and efficiency across distributed global sales teams. Streamlined activities by 60%, accelerated creative development by 50%.</li>
+          <li>Built leveling, role clarity, and career progression frameworks for the global marketing function. Introduced me@slalom framework including paths and tracks for consistency and mobility.</li>
+          <li>Developed future-state marketing organization design for immediate efficiencies and a scalable 2030 model.</li>
+          <li>Redesigned intake, prioritization, and business case process — turnaround dropped from 7+ days to under 2. Recovered 48 senior leader hours per month.</li>
+          <li>Client-facing consulting across healthcare, retail, financial services, and technology — organizational effectiveness, experience design, and complex program leadership.</li>
+        </ul>
+
+        <!-- Meaningful Work sub-program -->
+        <div class="sub-program" id="sub-meaningful-work"
+          data-tags="zero-to-one people-programs hcd org-architecture change-management">
+          <div class="sp-eyebrow">0→1 Global People Program</div>
+          <div class="sp-title">Meaningful Work Initiative</div>
+          <div class="sp-meta">Slalom · Global rollout · 2019</div>
+          <div class="sp-body">Championed, designed, and scaled a global initiative to formally improve consultants' experience of meaningful work — built from first principles when no framework existed. Conducted HCD research across consultant populations, embedded meaningful work as a first-class dimension of the performance process, created a calculated meaningful work score tracked per employee over time. Measurable positive impact on employee experience and retention.</div>
+        </div>
+
+        <!-- HCD for DEI sub-program -->
+        <div class="sub-program" id="sub-hcd-dei"
+          data-tags="zero-to-one hcd people-programs change-management org-architecture"
+          style="margin-top:12px;">
+          <div class="sp-eyebrow">0→1 Research to Org Change</div>
+          <div class="sp-title">HCD for DEI</div>
+          <div class="sp-meta">Slalom · 2018</div>
+          <div class="sp-body">Led a human-centered design program to understand and improve the lived experience of underrepresented employees at Slalom. Conducted original HCD research, prototyped targeted interventions — career growth transparency tools, social rituals not centered on alcohol, formal upward manager feedback mechanisms — and delivered evidence-based recommendations to general management. Result: approval of Slalom's first dedicated full-time IDE role, years before the firm hired a CIDEO.</div>
+        </div>
+      </div>
+
+      <!-- NORTHWESTERN -->
+      <div class="exp-item" id="exp-northwestern"
+        data-tags="org-architecture strategic-planning">
+        <div class="exp-company">Northwestern University</div>
+        <div class="exp-role">Associate Director, Kellogg Admissions · Assistant Director, Undergraduate Admissions</div>
+        <div class="exp-date">2014 – 2017</div>
+        <ul class="exp-bullets">
+          <li>Led strategic plan for a new degree program at Kellogg — 15% enrollment increase.</li>
+          <li>Restructured application process: 33% increase in applications received, 20% improvement in yield of top candidates.</li>
+          <li>Redesigned evaluation process: 66% reduction in staffing costs, candidate decision time reduced from 10 to 6 weeks.</li>
+          <li>Optimized marketing and outreach strategy, generating a record-setting 1.3% year-over-year application increase for undergraduate admissions.</li>
+        </ul>
+      </div>
+
+      <!-- BROADWAY -->
+      <div class="exp-item" id="exp-broadway"
+        data-tags="budget cross-functional strategic-planning">
+        <div class="exp-company">Broadway In Chicago</div>
+        <div class="exp-role">Integrated Marketing Manager</div>
+        <div class="exp-date">2011 – 2013</div>
+        <ul class="exp-bullets">
+          <li>Managed advertising, promotion, social, and press strategies for 15 shows annually with budgets up to $2M.</li>
+          <li>Developed and managed dynamic pricing strategy to maximize engagement revenue.</li>
+        </ul>
+      </div>
+
+      <!-- Education (shared, anchored in Classic) -->
+      <div class="edu-block" id="education">
+        <div class="section-rule">Education & Credentials</div>
+        <div class="edu-grid">
+          <div class="edu-card">
+            <div class="edu-degree">MS, Learning & Organizational Change</div>
+            <div class="edu-school">Northwestern University</div>
+            <div class="edu-year">2017</div>
+            <div class="edu-note">Research focus: empathy, mindset, and creative idea generation</div>
+          </div>
+          <div class="edu-card">
+            <div class="edu-degree">Organizational Leadership Coaching Certification</div>
+            <div class="edu-school">Northwestern University</div>
+            <div class="edu-year">2016</div>
+          </div>
+          <div class="edu-card">
+            <div class="edu-degree">BS, Communications</div>
+            <div class="edu-school">Northwestern University</div>
+            <div class="edu-year">2011</div>
+          </div>
+        </div>
+      </div>
+    </div><!-- /classic -->
+
+
+    <!-- ── 0→1 HIGHLIGHTS VIEW ── -->
+    <div class="view-pane" id="view-highlights">
+      <div class="section-rule">Program Highlights — 0→1 Experience</div>
+
+      <!-- Agent-First GTM -->
+      <div class="hcard" id="highlight-agent-gtm"
+        data-tags="zero-to-one ai-workflows gtm-operations cross-functional">
+        <div class="hcard-eyebrow">AI-Native · GTM Operations · 0→1</div>
+        <div class="hcard-title">Agent-First GTM Workflow</div>
+        <div class="hcard-meta">Notion · 2025</div>
+        <div class="hcard-stats">
+          <div class="hcard-stat"><div class="num">100+</div><div class="lbl">Marketers</div></div>
+          <div class="hcard-stat"><div class="num">Months → Days</div><div class="lbl">Campaign delivery</div></div>
+          <div class="hcard-stat"><div class="num">0→1</div><div class="lbl">No prior framework</div></div>
+        </div>
+        <div class="hcard-body">Redesigned Notion's integrated GTM campaign and sales play framework end-to-end, replacing months of manual cross-functional coordination with an automated, agent-first workflow built natively in Notion AI. Standardized execution across dozens of teams without sacrificing creative flexibility.</div>
+      </div>
+
+      <!-- Building S&O Functions -->
+      <div class="hcard" id="highlight-so-functions"
+        data-tags="zero-to-one chief-of-staff gtm-operations org-architecture strategic-planning">
+        <div class="hcard-eyebrow">Chief of Staff · Org Architecture · 0→1 · Three Consecutive Roles</div>
+        <div class="hcard-title">Building Foundational S&O Functions</div>
+        <div class="hcard-meta">Notion · Grammarly · Slalom · 2022–Present</div>
+        <div class="hcard-stats">
+          <div class="hcard-stat"><div class="num">3</div><div class="lbl">Functions built from scratch</div></div>
+          <div class="hcard-stat"><div class="num">0</div><div class="lbl">Inherited playbooks</div></div>
+        </div>
+        <div class="hcard-body">In three consecutive roles, was the first Chief of Staff or Strategic Operations leader hired to build foundational systems for an entire function — with no inherited playbook, infrastructure, or team.</div>
+        <ul class="hcard-bullets">
+          <li><strong>Notion (Global Marketing):</strong> Established operating systems, GTM planning infrastructure, and career framework for a global org supporting 100M+ users. $65M budget managed.</li>
+          <li><strong>Grammarly (GTM Strategy & Operations):</strong> Founded the first centralized GTM S&O function. Wrote the charter, hired a team of 8, built operating infrastructure across 100+ programs and events.</li>
+          <li><strong>Slalom (Global Marketing):</strong> Designed GTM models, org structures, and operating rhythms during rapid scale from 4,000 to 10,000+ employees across 52 global offices.</li>
+        </ul>
+      </div>
+
+      <!-- Career Framework Redesigns -->
+      <div class="hcard" id="highlight-career-frameworks"
+        data-tags="zero-to-one career-frameworks people-programs org-architecture">
+        <div class="hcard-eyebrow">People Programs · Career Architecture · 0→1 · Three Orgs</div>
+        <div class="hcard-title">Career Framework Redesigns</div>
+        <div class="hcard-meta">Notion · Grammarly · Slalom · 2022–2026</div>
+        <div class="hcard-stats">
+          <div class="hcard-stat"><div class="num">3</div><div class="lbl">Frameworks designed</div></div>
+          <div class="hcard-stat"><div class="num">Global</div><div class="lbl">Scale at Notion & Slalom</div></div>
+        </div>
+        <ul class="hcard-bullets">
+          <li><strong>Notion (2025–2026):</strong> Partnered with PBP to build new marketing career framework — updated levels, introduced functions as a new dimension, defined general and function-specific competencies. Human-discretion-first, AI-accelerated.</li>
+          <li><strong>Grammarly (2024):</strong> Partnered with PBP to update marketing level framework, creating standardization for performance management, career advancement, and hiring across a pivoting B2C2B org.</li>
+          <li><strong>Slalom Global Marketing (2022):</strong> Introduced me@slalom framework for global teams — paths and tracks for consistency and mobility across 52 offices.</li>
+        </ul>
+      </div>
+
+      <!-- Meaningful Work -->
+      <div class="hcard" id="highlight-meaningful-work"
+        data-tags="zero-to-one people-programs hcd org-architecture change-management">
+        <div class="hcard-eyebrow">People Programs · Human-Centered Design · Global Rollout</div>
+        <div class="hcard-title">Meaningful Work Program</div>
+        <div class="hcard-meta">Slalom · Global · 2019</div>
+        <div class="hcard-stats">
+          <div class="hcard-stat"><div class="num">Global</div><div class="lbl">Rollout</div></div>
+          <div class="hcard-stat"><div class="num">0→1</div><div class="lbl">No prior framework</div></div>
+          <div class="hcard-stat"><div class="num">↑</div><div class="lbl">Retention impact</div></div>
+        </div>
+        <div class="hcard-body">Based on groundswell employee feedback, championed, designed, piloted, and scaled a global initiative to formally improve consultants' experience of meaningful work. The concept itself had to be defined before it could be operationalized.</div>
+        <ul class="hcard-bullets">
+          <li>Conducted HCD research across consultant populations to formally define what "meaningful work" meant in practice across different roles and contexts.</li>
+          <li>Embedded meaningful work as a first-class dimension of the performance reflection process.</li>
+          <li>Created codified artifacts for employees to capture and share meaningful work preferences with managers and staffing teams.</li>
+          <li>Redesigned staffing model inputs to better match consultants to work aligned with their stated preferences.</li>
+          <li>Built lightweight pulse checks and a calculated meaningful work score tracked per employee over time.</li>
+        </ul>
+      </div>
+
+      <!-- HCD for DEI -->
+      <div class="hcard" id="highlight-hcd-dei"
+        data-tags="zero-to-one hcd people-programs change-management org-architecture">
+        <div class="hcard-eyebrow">Human-Centered Design · Research to Org Change · 0→1</div>
+        <div class="hcard-title">HCD for DEI</div>
+        <div class="hcard-meta">Slalom · 2018</div>
+        <div class="hcard-stats">
+          <div class="hcard-stat"><div class="num">First</div><div class="lbl">IDE role in firm history</div></div>
+          <div class="hcard-stat"><div class="num">HCD</div><div class="lbl">Research → structural change</div></div>
+        </div>
+        <div class="hcard-body">Led a human-centered design program to understand and improve the lived experience of underrepresented employees at Slalom — resulting in approval of the firm's first dedicated full-time IDE role, years before the firm hired a CIDEO.</div>
+        <ul class="hcard-bullets">
+          <li>Conducted original HCD research to surface experience gaps not visible in existing engagement data.</li>
+          <li>Prototyped targeted interventions: career growth transparency tools, social rituals not centered on alcohol, formal upward manager feedback mechanisms.</li>
+          <li>Delivered evidence-based recommendations and prototype results to general management.</li>
+          <li>GM approval granted for the firm's first full-time IDE role.</li>
+        </ul>
+      </div>
+
+      <!-- COVID Testing -->
+      <div class="hcard" id="highlight-covid"
+        data-tags="zero-to-one complex-programs change-management hcd">
+        <div class="hcard-eyebrow">Complex Program Leadership · HCD · 0→1 at Scale</div>
+        <div class="hcard-title">COVID-19 Testing Program</div>
+        <div class="hcard-meta">Slalom (Retail Pharmacy client) · 2020–2022</div>
+        <div class="hcard-stats">
+          <div class="hcard-stat"><div class="num">25M+</div><div class="lbl">Tests administered</div></div>
+          <div class="hcard-stat"><div class="num">8,000</div><div class="lbl">Store locations</div></div>
+          <div class="hcard-stat"><div class="num">30</div><div class="lbl">Person team</div></div>
+          <div class="hcard-stat"><div class="num">8</div><div class="lbl">Simultaneous workstreams</div></div>
+        </div>
+        <div class="hcard-body">Led a 30-person consulting engagement to stand up and administer 25M+ COVID tests nationwide across 8,000 retail pharmacy locations. Multi-year program with time-based, metric/outcome-based, and public-health-based milestones.</div>
+        <ul class="hcard-bullets">
+          <li>Created customer journeys and product requirements at scale across a nationwide retail infrastructure.</li>
+          <li>Launched a net-new digital health services scheduler that unlocked a new service line and revenue stream for the client.</li>
+          <li>Helped client build foundational product and operational infrastructure for an entirely new digital health business.</li>
+        </ul>
+      </div>
+
+    </div><!-- /highlights -->
+
+  </div><!-- /container -->
+</section>
+
+<!-- ═══ FOOTER ═══ -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-inner">
+      <span>Jamie Lynn White · white.jamie.lynn@gmail.com · San Francisco, CA</span>
+      <a href="https://jamielynnwhite.github.io/anthropic-pmo/" target="_blank" class="footer-link">People PMO Portfolio →</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+// ═══════════════════════════════
+// VIEW TOGGLE
+// ═══════════════════════════════
+let currentView = 'classic';
+let activeTag = null;
+
+function setView(view) {
+  currentView = view;
+  document.querySelectorAll('.view-pane').forEach(p => p.classList.remove('active'));
+  document.getElementById('view-' + view).classList.add('active');
+  document.querySelectorAll('.view-btn').forEach(b => b.classList.toggle('active', b.dataset.view === view));
+  applyFilter();
+}
+
+document.querySelectorAll('.view-btn').forEach(btn => {
+  btn.addEventListener('click', () => setView(btn.dataset.view));
+});
+
+// ═══════════════════════════════
+// TAG FILTERING
+// ═══════════════════════════════
+function applyFilter() {
+  const items = document.querySelectorAll('.exp-item, .sub-program, .hcard');
+  if (!activeTag) {
+    items.forEach(el => el.classList.remove('dimmed', 'highlighted'));
+    return;
+  }
+  items.forEach(el => {
+    const tags = (el.dataset.tags || '').split(' ');
+    if (tags.includes(activeTag)) {
+      el.classList.remove('dimmed');
+      el.classList.add('highlighted');
+    } else {
+      el.classList.add('dimmed');
+      el.classList.remove('highlighted');
+    }
+  });
+}
+
+document.querySelectorAll('.tag').forEach(tag => {
+  tag.addEventListener('click', () => {
+    const id = tag.dataset.tag;
+    if (activeTag === id) {
+      activeTag = null;
+      tag.classList.remove('active');
+      document.getElementById('tag-clear').classList.remove('visible');
+    } else {
+      document.querySelectorAll('.tag').forEach(t => t.classList.remove('active'));
+      tag.classList.add('active');
+      activeTag = id;
+      document.getElementById('tag-clear').classList.add('visible');
+    }
+    applyFilter();
+  });
+});
+
+document.getElementById('tag-clear').addEventListener('click', () => {
+  activeTag = null;
+  document.querySelectorAll('.tag').forEach(t => t.classList.remove('active'));
+  document.getElementById('tag-clear').classList.remove('visible');
+  applyFilter();
+});
+
+// ═══════════════════════════════
+// NAVIGATE TO SECTION (annotations + manifesto links)
+// ═══════════════════════════════
+function goTo(targetId, view) {
+  const switchingView = view && view !== currentView;
+  if (switchingView) setView(view);
+
+  setTimeout(() => {
+    const el = document.getElementById(targetId);
+    if (!el) return;
+    el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    el.classList.add('flash-target');
+    setTimeout(() => el.classList.remove('flash-target'), 2400);
+  }, switchingView ? 180 : 0);
+}
+
+// Annotation cards
+document.querySelectorAll('.ann-card[data-target]').forEach(card => {
+  card.addEventListener('click', () => goTo(card.dataset.target, card.dataset.view));
+});
+
+// Education annotation (scrolls to #education anchor, always in classic)
+document.querySelectorAll('.ann-card[data-target="education"]').forEach(card => {
+  card.addEventListener('click', () => {
+    if (currentView !== 'classic') setView('classic');
+    setTimeout(() => {
+      document.getElementById('education').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }, 180);
+  });
+});
+</script>
+</body>
+</html>
