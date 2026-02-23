@@ -86,6 +86,7 @@ body {
   gap: 0 56px;
   align-items: start;
 }
+.manifesto-body {}
 .mpara {
   font-family: Georgia, 'Times New Roman', serif;
   font-size: 17px;
@@ -93,7 +94,11 @@ body {
   color: #111;
   margin-bottom: 32px;
 }
-.maside { padding-top: 3px; }
+.maside {
+  padding-top: 3px;
+  position: sticky;
+  top: 68px;
+}
 
 /* Annotation cards */
 .ann-card {
@@ -436,16 +441,22 @@ body {
     <div class="manifesto-eyebrow">Why Anthropic — in my own words</div>
     <div class="manifesto-grid">
 
-      <!-- P1 -->
-      <p class="mpara">We don't get to opt out of the AI transition. The question isn't whether artificial intelligence will reshape how doctors practice medicine, how teachers reach students, how public defenders build cases, or how governments make decisions. It's who gets to shape how that happens — and whether the people doing the shaping understand the humans on the receiving end.</p>
-      <div class="maside"></div>
+      <div class="manifesto-body">
+        <p class="mpara">We don't get to opt out of the AI transition. The question isn't whether artificial intelligence will reshape how doctors practice medicine, how teachers reach students, how public defenders build cases, or how governments make decisions. It's who gets to shape how that happens — and whether the people doing the shaping understand the humans on the receiving end.</p>
 
-      <!-- P2 -->
-      <p class="mpara">That's why working at Anthropic matters to me. Not as a career move. As a conviction.</p>
-      <div class="maside"></div>
+        <p class="mpara">That's why working at Anthropic matters to me. Not as a career move. As a conviction.</p>
 
-      <!-- P3 -->
-      <p class="mpara">I've spent 15 years at the intersection of organizational effectiveness and human-centered design — across higher education, management consulting, healthcare, pharma, retail, financial services, and scaling tech. That breadth isn't incidental. It's the reason I think about people programs differently than most. When you've helped stand up a program that administered 25 million COVID tests across 8,000 retail pharmacy locations, worked inside the university systems that train tomorrow's professionals, and built the GTM infrastructure for platforms used by 100 million people, you develop a visceral sense of how differently people in different contexts experience the same technology. That perspective doesn't leave you. It becomes the lens through which you design everything.</p>
+        <p class="mpara">I've spent 15 years at the intersection of organizational effectiveness and human-centered design — across higher education, management consulting, healthcare, pharma, retail, financial services, and scaling tech. That breadth isn't incidental. It's the reason I think about people programs differently than most. When you've helped stand up a program that administered 25 million COVID tests across 8,000 retail pharmacy locations, worked inside the university systems that train tomorrow's professionals, and built the GTM infrastructure for platforms used by 100 million people, you develop a visceral sense of how differently people in different contexts experience the same technology. That perspective doesn't leave you. It becomes the lens through which you design everything.</p>
+
+        <p class="mpara">My conviction about Anthropic's people programs is this: they need to be as deeply rooted in empathy for end users as Claude itself is. The care that went into Claude's constitution — the explicit codification of values, priorities, and how the model should reason through difficult situations — is exactly the kind of intentionality that people programs need to match. The employees building and shaping these models need organizational systems that help them internalize the stakes for the doctor, the student, the patient, the small business owner. Not just the technical benchmarks. That's not soft work. It's the hardest work, and it's the work that determines whether the mission actually lands in the world.</p>
+
+        <p class="mpara">I know how to build those systems. I've designed programs from first principles in genuinely ambiguous domains: a global meaningful work initiative built from HCD research when no framework existed, a human-centered DEI engagement that resulted in permanent structural change, an AI-native campaign workflow that compressed months of organizational friction into days. In every case, the methodology was the same — start with what humans actually experience, design toward what they actually need, and build infrastructure that outlasts the initiative.</p>
+
+        <p class="mpara">My coaching certification and my master's research in empathy, mindset, and creative idea generation aren't credentials I keep on a shelf. They're how I think about every program I build — because the hardest part of any people program isn't the design. It's the adoption. And adoption requires understanding how people actually change, not just how organizations say they want them to.</p>
+
+        <p class="mpara">I want to support the people who are designing how AI shapes our world. I believe Anthropic is doing that work with more rigor and more moral seriousness than anyone. And I believe the people programs that support that mission need to be built with the same care. I'd love to be the person who builds them.</p>
+      </div>
+
       <div class="maside">
         <div class="ann-card" data-target="highlight-covid" data-view="highlights">
           <div class="ann-type">Program Highlight</div>
@@ -461,11 +472,6 @@ body {
           <div class="ann-stat">$65M budget · 100M+ users</div>
           <span class="ann-cta">View role →</span>
         </div>
-      </div>
-
-      <!-- P4 -->
-      <p class="mpara">My conviction about Anthropic's people programs is this: they need to be as deeply rooted in empathy for end users as Claude itself is. The care that went into Claude's constitution — the explicit codification of values, priorities, and how the model should reason through difficult situations — is exactly the kind of intentionality that people programs need to match. The employees building and shaping these models need organizational systems that help them internalize the stakes for the doctor, the student, the patient, the small business owner. Not just the technical benchmarks. That's not soft work. It's the hardest work, and it's the work that determines whether the mission actually lands in the world.</p>
-      <div class="maside">
         <div class="ann-card dark-card" data-target-url="https://jamielynnwhite.github.io/anthropic-pmo/">
           <div class="ann-type">I already built this</div>
           <div class="ann-title">People PMO Portfolio</div>
@@ -473,11 +479,6 @@ body {
           <div class="ann-stat">Level framework · L&D · Hiring · Comp · Reviews</div>
           <a class="ann-cta" href="https://jamielynnwhite.github.io/anthropic-pmo/" target="_blank" onclick="event.stopPropagation()">Explore the portfolio →</a>
         </div>
-      </div>
-
-      <!-- P5 -->
-      <p class="mpara">I know how to build those systems. I've designed programs from first principles in genuinely ambiguous domains: a global meaningful work initiative built from HCD research when no framework existed, a human-centered DEI engagement that resulted in permanent structural change, an AI-native campaign workflow that compressed months of organizational friction into days. In every case, the methodology was the same — start with what humans actually experience, design toward what they actually need, and build infrastructure that outlasts the initiative.</p>
-      <div class="maside">
         <div class="ann-card" data-target="highlight-meaningful-work" data-view="highlights">
           <div class="ann-type">0→1 Program</div>
           <div class="ann-title">Meaningful Work Initiative</div>
@@ -499,11 +500,6 @@ body {
           <div class="ann-stat">Months → days · 100+ marketers</div>
           <span class="ann-cta">View full program →</span>
         </div>
-      </div>
-
-      <!-- P6 -->
-      <p class="mpara">My coaching certification and my master's research in empathy, mindset, and creative idea generation aren't credentials I keep on a shelf. They're how I think about every program I build — because the hardest part of any people program isn't the design. It's the adoption. And adoption requires understanding how people actually change, not just how organizations say they want them to.</p>
-      <div class="maside">
         <div class="ann-card" data-target="education" data-view="classic">
           <div class="ann-type">Education</div>
           <div class="ann-title">MS, Learning & Org Change</div>
@@ -513,10 +509,6 @@ body {
           <span class="ann-cta">View education →</span>
         </div>
       </div>
-
-      <!-- P7 -->
-      <p class="mpara">I want to support the people who are designing how AI shapes our world. I believe Anthropic is doing that work with more rigor and more moral seriousness than anyone. And I believe the people programs that support that mission need to be built with the same care. I'd love to be the person who builds them.</p>
-      <div class="maside"></div>
 
     </div>
   </div>
@@ -855,6 +847,18 @@ function applyFilter() {
       el.classList.remove('highlighted');
     }
   });
+
+  // Scroll to first highlighted item that is inside the active view pane
+  const allHighlighted = [...document.querySelectorAll('.exp-item.highlighted, .sub-program.highlighted, .hcard.highlighted')];
+  const firstVisible = allHighlighted.find(el => el.closest('.view-pane.active'));
+  if (firstVisible) {
+    setTimeout(() => {
+      const filterBarHeight = document.querySelector('.filter-bar').offsetHeight;
+      const rect = firstVisible.getBoundingClientRect();
+      const scrollTop = window.scrollY + rect.top - filterBarHeight - 24;
+      window.scrollTo({ top: scrollTop, behavior: 'smooth' });
+    }, 60);
+  }
 }
 
 document.querySelectorAll('.tag').forEach(tag => {
